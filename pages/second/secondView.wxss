@@ -1,0 +1,44 @@
+/* pages/second/secondView.wxss */
+
+.main{
+  display:flex; 
+  flex-wrap:wrap;
+  height: 100%;
+}
+
+.leftView{
+  width: 30%;
+  position:relative; 
+  z-index:999;
+}
+
+.leftRow{
+  height: 100px;
+  border-bottom: 1rpx solid black;
+  border-right: 1rpx solid black;
+  display: flex;
+  align-items: center;
+
+}
+
+::-webkit-scrollbar{
+  height: 0;
+  width: 0;
+  color: transparent;
+}
+
+.rightView{
+  width: 70%;
+  position:relative; 
+  z-index:999;
+  
+}
+
+.rightRow{
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid black;
+}
+

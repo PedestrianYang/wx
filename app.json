@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mainPage/mainPage",
+    "pages/home/homeView",
+    "pages/second/secondView",
+    "pages/shopcCar/shopCar",
+    "pages/userInfo/userInfo",
+    "pages/detail/detailView"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "red",
+    "list": [
+      {
+        "pagePath": "pages/mainPage/mainPage",
+        "text": "首页",
+        "iconPath": "src/tab_home_normal@2x.png",
+        "selectedIconPath": "src/tab_home_selected@2x.png"
+      },
+      {
+        "pagePath": "pages/second/secondView",
+        "text": "分类",
+        "iconPath": "src/tab_category_normal@2x.png",
+        "selectedIconPath": "src/tab_category_selected@2x.png"
+      },
+      {
+        "pagePath": "pages/shopcCar/shopCar",
+        "text": "购物车",
+        "iconPath": "src/tab_buycar_normal@2x.png",
+        "selectedIconPath": "src/tab_buycar_selected@2x.png"
+      },
+      {
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "我的",
+        "iconPath": "src/tab_center_normal@2x.png",
+        "selectedIconPath": "src/tab_center_selected@2x.png"
+      }
+    ]
+  }
+}

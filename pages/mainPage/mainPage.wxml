@@ -1,0 +1,16 @@
+<!--pages/mainPage/mainPage.wxml-->
+
+<swiper style='border-top: 1rpx solid black'  indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' class="banner">
+        <swiper-item wx:for="{{zhuanti}}">  
+          <image src="{{item.imagepath}}" class='bannerItem' />  
+        </swiper-item>  
+  
+</swiper>
+
+<view  class='daohang'>
+    <view wx:for="{{daohang}}" class='row' bindtap='itemClick'>
+    <image src="{{item.imagepath}}" class="daohangImg"/>     
+    </view>
+</view>
+
+

@@ -1,0 +1,13 @@
+<!--pages/second/secondView.wxml-->
+<view class='main'>
+  <scroll-view class='leftView' scroll-y="true"  lower-threshold="50" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+    <view class='leftRow' wx:for="{{leftData}}" bindtap='leftItemClick' data-item='{{item.title}}'>
+    {{item.title}}
+    </view>
+  </scroll-view>
+  <scroll-view class='rightView' scroll-y="true" lower-threshold="50" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+    <view class='rightRow' wx:for="{{showRightData.data}}">
+    <text>{{item.title}}</text>
+    </view>
+  </scroll-view>
+</view>
