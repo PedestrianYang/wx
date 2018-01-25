@@ -1,16 +1,168 @@
 <!--pages/mainPage/mainPage.wxml-->
 
 <swiper style='border-top: 1rpx solid black'  indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' class="banner">
-        <swiper-item wx:for="{{zhuanti}}">  
-          <image src="{{item.imagepath}}" class='bannerItem' />  
-        </swiper-item>  
-  
+  <swiper-item wx:for="{{zhuanti}}" class='bannerItem'>  
+    <image src="{{item.imagepath}}" class='miaosha2image' mode="widthFix"/>  
+  </swiper-item>  
 </swiper>
 
+<!--导航按钮 -->
 <view  class='daohang'>
     <view wx:for="{{daohang}}" class='row' bindtap='itemClick'>
-    <image src="{{item.imagepath}}" class="daohangImg"/>     
+    <image src="{{item.imagepath}}" class="daohangImg" mode="widthFix"/>     
     </view>
 </view>
 
+<!--限时抢购  -->
+<view style='height: 37px; margin-top:10px'>
+<image wx:if="{{miaosha.length > 0}}" src='../../src/home_a.png' class="titleImg" mode="widthFix"/>
+</view>
 
+<scroll-view scroll-x="true" class='miaoshaScroll'>
+  <view wx:for="{{miaosha}}" class='miaoshacontent'>
+    <image src="{{item.coverPath}}" mode="aspectFill" class="miaoshaimage" mode="widthFix"/> 
+    <text class='miaoshaprice'>{{item.actPrice}}</text>
+    <text class='miaoshaactprice'>{{item.price}}</text>
+  </view>
+</scroll-view>
+<view style='display:flex; flex-wrap:wrap;'>
+<view wx:for="{{miaosha2}}" class='miaosha2content'>
+  <image src="{{item.imagepath}}" mode="aspectFill" class="miaosha2image" mode="widthFix"></image>
+</view>
+</view>
+
+<!--广告  -->
+<view class='guanggao'>
+  <view class='guanggao_half'>
+    <view class='guanggao_1'>
+      <image class='miaosha2image' src="{{guanggao[0].imagepath}}" mode="widthFix"/>
+    </view>
+    <view class='fouresmall'>
+      <image class='miaosha2image' src="{{guanggao[4].imagepath}}" mode="widthFix"/>
+    </view>
+  </view>
+  
+  <view class='guanggao_half'>
+    <view class='fouresmall' >
+      <image src="{{guanggao[1].imagepath}}" mode="widthFix" class='miaosha2image'></image>
+    </view>
+    <view class='fouresmall' >
+      <image src="{{guanggao[2].imagepath}}" mode="widthFix" class='miaosha2image'></image>
+    </view>
+    <view class='fouresmall' >
+      <image src="{{guanggao[3].imagepath}}" mode="widthFix" class='miaosha2image'></image>
+    </view>
+
+  </view>
+ 
+</view>
+
+<!--为你推荐  -->
+<view style='height: 37px;'>
+  <image wx:if="{{miaosha.length > 0}}" src='../../src/home_b.png' class="titleImg" mode="widthFix"/>
+</view>
+
+<view class='tuijian' >
+  <view class='tuijian_item1 tuijian_border top_border '>
+    <image src='{{tuijian[0].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item1 tuijian_border top_border' >
+    <image src='{{tuijian[1].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item1 tuijian_border top_border'>
+    <image src='{{tuijian[2].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item1 tuijian_border top_border'>
+    <image src='{{tuijian[3].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item2 tuijian_border'>
+    <image src='{{tuijian[4].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item2 tuijian_border'>
+    <image src='{{tuijian[5].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item2 tuijian_border'>
+    <image src='{{tuijian[6].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item2 tuijian_border'>
+    <image src='{{tuijian[7].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+</view>
+
+<!--特色好货  -->
+<view style='height: 37px'>
+  <image wx:if="{{miaosha.length > 0}}" src='../../src/home_d.png' class="titleImg" mode="widthFix"/>
+</view>
+
+<view class='tesehaohuo'>
+  <view class='tesehaohuo_row_left tuijian_border top_border'>
+    <view class='bannerItem'>
+      <image class='miaosha2image' src="{{zhuti[0].imagepath}}" mode="widthFix"/>
+    </view>
+  </view>
+  
+  <view class='tesehaohuo_row_left' >
+    <view class='tesehaohuo_row_left_item tuijian_border top_border' >
+      <image src="{{zhuti[1].imagepath}}" mode="widthFix" class='miaosha2image'></image>
+    </view>
+    <view class='tesehaohuo_row_left_item tuijian_border' >
+      <image src="{{zhuti[2].imagepath}}" mode="widthFix" class='miaosha2image'></image>
+    </view>
+  </view>
+
+  <view class='tesehaohuo_row_bottom' >
+    <view class='tesehaohuo_row_bottom_item tuijian_border' >
+      <image src="{{zhuti[3].imagepath}}" mode="widthFix" class='miaosha2image'></image>
+    </view>
+    <view class='tesehaohuo_row_bottom_item tuijian_border' >
+      <image src="{{zhuti[4].imagepath}}" mode="widthFix" class='miaosha2image'></image>
+    </view>
+    <view class='tesehaohuo_row_bottom_item tuijian_border' >
+      <image src="{{zhuti[5].imagepath}}" mode="widthFix" class='miaosha2image'></image>
+    </view>
+  </view>
+</view>
+
+ <!-- 聚好店   -->
+<view style='height: 40px; margin-top:10px;'>
+  <image wx:if="{{teseguan.length > 0}}" src='../../src/home_e.png' class="titleImg" mode="widthFix"/>
+</view> 
+<view class='teseguan'>
+  <view class='tuijian_item2 tuijian_border'>
+    <image src='{{teseguan[0].imagepath}}' class='miaosha2image top_border' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item2 tuijian_border'>
+    <image src='{{teseguan[1].imagepath}}' class='miaosha2image top_border' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item2 tuijian_border'>
+    <image src='{{teseguan[2].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item2 tuijian_border'>
+    <image src='{{teseguan[3].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item1 tuijian_border  '>
+    <image src='{{teseguan[4].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item1 tuijian_border  '>
+    <image src='{{teseguan[5].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item1 tuijian_border  '>
+    <image src='{{teseguan[6].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+  <view class='tuijian_item1 tuijian_border  '>
+    <image src='{{teseguan[7].imagepath}}' class='miaosha2image' mode="widthFix"></image>
+  </view>
+</view>
+
+<!--必买  -->
+<view style='height: 35px;'>
+  <image wx:if="{{teseguan.length > 0}}" src='../../src/home_c.png' class="titleImg" mode="widthFix"/>
+</view> 
+
+<view class='bimai' style='height:auto'>
+  <view wx:for="{{bimai}}" class='bimai_item '>
+    <image src='{{item.coverPath}}' class='bimai_item_img' mode="aspectFit"/>
+    <text class='miaoshaprice'>{{item.actPrice}}</text>
+    <text class='miaoshaactprice'>{{item.price}}</text>
+  </view>
+</view>

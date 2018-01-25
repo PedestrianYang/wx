@@ -1,11 +1,12 @@
 /* pages/mainPage/mainPage.wxss */
 .banner{
   width: 100%; 
-  height: 150px;
+  height: 200px;
   }
+
 .bannerItem{
 width: 100%; 
-height: 150px;
+height: 100%;
 
 }
 
@@ -22,6 +23,173 @@ height: 150px;
 
 .daohangImg{
   width: 100%; 
-  height: 80px;
+
 }
+
+.titleImg{
+  width: 100%;
+  height: 100%;
+}
+
+.miaoshaScroll{
+  width: 100%;
+  white-space: nowrap;
+}
+
+.miaoshacontent{
+  width: 19%;
+  height: 120px;
+  display: inline-block;
+  padding: 5px;
+  border-bottom: 1rpx solid gainsboro;
+  border-right: 1rpx solid gainsboro;
+}
+
+.miaoshaimage{
+  width: 100%;
+  height: 60%;
+  display: block;
+}
+
+.miaoshaprice{
+  color: red;
+  font-size: 10pt;
+  display: block;
+  text-align: center;
+}
+
+.miaoshaactprice{
+  color: black;
+  font-size: 10pt;
+  display: block;
+  text-align: center;
+  text-decoration: line-through;
+}
+
+.miaosha2content{
+  width: 33%;
+  height: 180px;
+  border-bottom: 1rpx solid gainsboro;
+  border-right: 1rpx solid gainsboro;
+}
+
+.miaosha2image{
+  width: 100%;
+
+}
+
+.guanggao{
+  margin-top: 10px;
+  display:flex; 
+  flex-wrap:wrap;
+  width: 100%;
+  height: 324px;
+}
+
+.guanggao_1{
+  width: 100%;
+  height: 66.66%;
+}
+
+.guanggao_half{
+  width: 50%;
+  height: 100%;
+}
+
+.bigad{
+  width: 49%;
+  height: 100%;
+}
+
+.fouresmall{
+  width: 100%;
+  height: 33.33%;
+}
+
+.tuijian{
+  display:flex; 
+  flex-wrap:wrap;
+  width: 100%;
+  height: 400px;
+}
+
+.tuijian_item1{
+  width:24.76%;
+}
+
+.tuijian_item2{
+  width:49.71%;
+}
+
+.tuijian_border{
+  border-bottom: 1rpx solid gainsboro;
+  border-right: 1rpx solid gainsboro;
+}
+
+.top_border{
+  border-top: 1rpx solid gainsboro;
+}
+
+.tesehaohuo{
+  display:flex; 
+  flex-wrap:wrap;
+  width: 100%;
+  height: 380px;
+}
+
+.tesehaohuo_row_left{
+  width: 49.78%;
+  height: 66.66%;
+}
+
+.tesehaohuo_row_left_item{
+  width: 100%;
+  height: 49.78%;
+}
+
+.tesehaohuo_row_bottom{
+  display:flex; 
+  flex-wrap:wrap;
+  width: 100%;
+  height: 33.33%;
+}
+
+.tesehaohuo_row_bottom_item{
+  width: 33%;
+  height: 99%;
+}
+
+.teseguan{
+  display:flex; 
+  flex-wrap:wrap;
+  width: 100%;
+  height: 380;
+}
+
+.bimai{
+  display:flex; 
+  flex-wrap:wrap;
+  justify-content: center;
+  width: 100%;
+  background: gainsboro;
+}
+
+.bimai_item{
+  display: block;
+  flex-wrap:wrap;
+  background: white;
+  width: 45%;
+  height: 210px;
+  margin: 5px;
+
+}
+
+.bimai_item_img{
+  margin-top: 5px;
+  display: block;
+  text-align:center;
+  width: 100%;
+  height: 150px;
+}
+
 

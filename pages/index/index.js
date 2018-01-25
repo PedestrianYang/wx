@@ -23,6 +23,7 @@ Page({
   },
 
   onLoad: function () {
+
     wx.getUserInfo({
       success: res => {
         

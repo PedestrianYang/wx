@@ -9,12 +9,20 @@ Page({
   data: {
     userInfo: {},
     zhuanti: [],
+    daohang: [],
+    miaosha:[],
+    miaosha2: [],
+    guanggao:[],
+    tuijian:[],
+    zhuti:[],
+    teseguan:[],
+    bimai:[],
     bannerHeight: 100,
-    daohang:[],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000, 
+    clientHeight: 200,
   },
 
 
@@ -39,23 +47,37 @@ Page({
   },
   
   requestForData: function(){
-    var time = Date.parse(new Date())
-    var dataStr = "{device:0,build:3.6.0,time:" + time + "}"
+    
 
-    var data1 = util.getSecParam(dataStr);
+    var data1 = util.getSecParam(null);
 
     var that = this;
     const requestTask = wx.request({
-      url: "http://218.28.35.139:8001/IyunshuAppTest/yunshu/selectHomepage_NEW",
+      url: "http://10.0.7.7/IyunshuApp/yunshu/selectHomepage_NEW",
       data: data1,
       header: {
         'content-type': 'application/json' // 默认值
       },
+      fail: function(res){
+        console.log(res)
+      },
+      complete: function(res){
+
+      },
       success: function (res) {
         console.log(res.data.data)
+        wx.hideNavigationBarLoading() //完成停止加载
+        wx.stopPullDownRefresh() //停止下拉刷新
         that.setData({
           zhuanti: res.data.data.zhuanti,
-          daohang: res.data.data.daohang
+          daohang: res.data.data.daohang,
+          miaosha: res.data.data.miaosha,
+          miaosha2: res.data.data.miaosha2,
+          guanggao: res.data.data.guanggao,
+          tuijian: res.data.data.tuijian,
+          zhuti: res.data.data.zhuti,
+          teseguan: res.data.data.teseguan,
+          bimai: res.data.data.bimai,
         })
       }
     })
@@ -72,14 +94,41 @@ Page({
     
     wx.showNavigationBarLoading() //在标题栏中显示加载
 
-    //模拟加载
-    setTimeout(function () {
-      // complete
-      wx.hideNavigationBarLoading() //完成停止加载
-      wx.stopPullDownRefresh() //停止下拉刷新
-    }, 1500);
+    this.requestForData()
   },
   
+  onReachBottom: function(){
+    console.log("---------");
+    var pos = this.data.bimai.length;
+  
+    var data1 = util.getSecParam({ 'pos': pos, 'rowname': 'bimai'});
+
+    var that = this;
+    const requestTask = wx.request({
+      url: "http://10.0.7.7/IyunshuApp/yunshu/selectMoreByRowname",
+      data: data1,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      fail: function (res) {
+        console.log(res)
+      },
+      complete: function (res) {
+
+      },
+      success: function (res) {
+        
+        console.log(res.data.data)
+        util.getdeParam(res.data.data)
+        
+        // res.data.data.bimai
+        // that.setData({
+        //   bimai: bimai.concat(res.data.data.bimai),
+        // })
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -109,19 +158,6 @@ Page({
   
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
 
   /**
    * 用户点击右上角分享

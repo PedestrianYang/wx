@@ -4422,10 +4422,13 @@ function RSADoPrivate(a) {
 }
 function RSADecrypt(b) {
     var d = parseBigInt(b, 16);
+    // var a = this.doPublic(d);
     var a = this.doPrivate(d);
+    debugger
     if (a == null) {
         return null
     }
+    // return pkcs1pad2(a, (this.n.bitLength() + 7) >> 3);
     return pkcs1unpad2(a, (this.n.bitLength() + 7) >> 3)
 }
 function RSADecryptOAEP(e, d, b) {
@@ -14458,5 +14461,6 @@ module.exports = {
     RSAKey: RSAKey,
     KEYUTIL: KEYUTIL,
     hex2b64: hex2b64,
-    b64tohex: b64tohex
+    b64tohex: b64tohex,
+    stohex: stohex
 }
